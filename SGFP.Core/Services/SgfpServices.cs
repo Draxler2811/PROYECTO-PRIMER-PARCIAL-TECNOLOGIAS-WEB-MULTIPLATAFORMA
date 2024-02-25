@@ -13,7 +13,7 @@ public class SgfpService : ISgfpService{
 
     private int contadorTransacciones = 0;
 
-    public Sgfp ProcessSgfp(Person person){
+    public Sgfp RegistroSgfp(Person person){
        
         var sgft = new Sgfp();
 

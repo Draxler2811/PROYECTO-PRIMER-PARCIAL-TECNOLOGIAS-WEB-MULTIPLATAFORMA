@@ -12,7 +12,7 @@ public class SgfpManager : ISgfpManager{
     }
 
     public Sgfp GetSgfp(Person person){
-        return _service.ProcessSgfp(person);
+        return _service.RegistroSgfp(person);
         return _service.SeguimientoSgfp(person);
         return _service.MetaSgfp(person);
     }

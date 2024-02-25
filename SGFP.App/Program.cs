@@ -9,9 +9,7 @@ namespace SGFP.App;
 public static class Program{
 
     public static void Main(String[] args ){
-        decimal monto = 0;
-        decimal dinero = 0;
-
+       
         SgfpService sgfpService = new SgfpService();
 
       Console.WriteLine("Bienvenido al Sistema de Cálculo de Financiero1");
@@ -30,14 +28,13 @@ public static class Program{
                 switch (opcion)
                 {
                     case "1":
-                        sgfpService.ProcessSgfp(new Person { Monto = monto });
-                        break;
+                        sgfpService.RegistroSgfp(new Person());
                         break;
                     case "2":
-                        sgfpService.SeguimientoSgfp(new Person { Salario = dinero });                        
+                        sgfpService.SeguimientoSgfp(new Person());                        
                         break;
                      case "3":
-                        sgfpService.MetaSgfp(new Person { Salario = dinero }); 
+                        sgfpService.MetaSgfp(new Person()); 
                         break;
                      case "4":
                         Console.WriteLine("Gracias por usar nuestro servicio. ¡Hasta luego!");
