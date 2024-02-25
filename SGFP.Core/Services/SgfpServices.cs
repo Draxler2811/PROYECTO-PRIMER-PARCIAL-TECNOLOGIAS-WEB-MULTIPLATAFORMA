@@ -5,9 +5,11 @@ namespace SGFP.Core.Services;
 
 public class SgfpService : ISgfpService
 {
-    private decimal[] montos = new decimal[100];
-    private string[] descripciones = new string[100];
-    private string[] conceptos = new string[100];
+    List<decimal> montos = new List<decimal>();
+    List<string> conceptos = new List<string>();
+    List<decimal> montosRetiros = new List<decimal>();
+    List<string> conceptosRetiros = new List<string>();
+    List<string> descripciones = new List<string>();
 
     List<string> conceptosMetas = new List<string>();
     List<decimal> MontosMetas = new List<decimal>();
@@ -46,9 +48,9 @@ public class SgfpService : ISgfpService
                     string concepto = Console.ReadLine();
 
                     // Almacenar la transacción en los arreglos
-                    montos[contadorTransacciones] = monto;
-                    descripciones[contadorTransacciones] = descripcion;
-                    conceptos[contadorTransacciones] = concepto;
+                    montos.Add(monto);
+                    descripciones.Add(descripcion);
+                    conceptos.Add(concepto);
                     saldoActual += monto;
                     ingresos += monto;
                     contadorTransacciones++;
@@ -56,17 +58,18 @@ public class SgfpService : ISgfpService
                 case "2":
                     Console.WriteLine("Ingresa el Monto a retirar: ");
                     decimal montoRetiro = decimal.Parse(Console.ReadLine());
-                    Console.WriteLine("Ingresa el concepto del retiro: ");
-                    string conceptoRetiro = Console.ReadLine();
-
                     if (montoRetiro > saldoActual)
                     {
                         Console.WriteLine("No hay saldo suficiente para el retiro.");
                     }
                     else
                     {
+                        Console.WriteLine("Ingresa el concepto del retiro: ");
+                        string conceptoRetiro = Console.ReadLine();
                         saldoActual -= montoRetiro;
                         gastos += montoRetiro;
+                        montosRetiros.Add(montoRetiro);
+                        conceptosRetiros.Add(conceptoRetiro);
                         Console.WriteLine(
                             $"Se retiraron ${montoRetiro} exitosamente. Concepto: {conceptoRetiro}."
                         );
@@ -113,7 +116,33 @@ public class SgfpService : ISgfpService
                     }
                     break;
                 case "2":
-                    Console.WriteLine("\n============ RESUMEN FINANCIERO =============");
+                    Console.WriteLine(
+                        "\n============ Transacciones relaizadas (Ingresos) =============="
+                    );
+                    for (int i = 0; i < montos.Count; i++)
+                    {
+                        Console.WriteLine(
+                            "Ingreso de $"
+                                + montos[i]
+                                + " con categoría de "
+                                + descripciones[i]
+                                + " y con un concepto de "
+                                + conceptos[i]
+                        );
+                    }
+                    Console.WriteLine($"Total de ingresos: ${ingresos}");
+
+                    Console.WriteLine(
+                        "\n============ Transacciones relaizadas (Retiros) =============="
+                    );
+                    for (int i = 0; i < montosRetiros.Count; i++)
+                    {
+                        Console.WriteLine(
+                            "Retiro de $" + montosRetiros[i] + " con concepto de " + conceptosRetiros[i]
+                        );
+                    }
+                    Console.WriteLine($"Total de gastos: ${gastos}");
+
                     break;
                 case "3":
                     Console.WriteLine("Saliendo del Menú SgfpService...");
@@ -174,13 +203,12 @@ public class SgfpService : ISgfpService
                 case "2":
                     for (int i = 0; i < MontosMetas.Count; i++)
                     {
-                        if (saldoActual  >= MontosMetas[i])
+                        if (saldoActual >= MontosMetas[i])
                         {
                             Console.WriteLine("\n=========== {0} ============", conceptosMetas[i]);
                             Console.WriteLine(
                                 "Tu meta de ahorro para " + conceptosMetas[i] + " es de ${0}",
-                                MontosMetas[i] +" ( meta completada )"
-                                
+                                MontosMetas[i] + " ( meta completada )"
                             );
                         }
                         else
@@ -188,8 +216,10 @@ public class SgfpService : ISgfpService
                             Console.WriteLine("\n=========== {0} ============", conceptosMetas[i]);
                             Console.WriteLine(
                                 "Tu meta de ahorro para " + conceptosMetas[i] + " es de ${0}",
-                                MontosMetas[i] +
-                                " ( aún te faltan $" + (MontosMetas[i]-saldoActual) + " )"
+                                MontosMetas[i]
+                                    + " ( aún te faltan $"
+                                    + (MontosMetas[i] - saldoActual)
+                                    + " )"
                             );
                         }
                         //Console.WriteLine(
