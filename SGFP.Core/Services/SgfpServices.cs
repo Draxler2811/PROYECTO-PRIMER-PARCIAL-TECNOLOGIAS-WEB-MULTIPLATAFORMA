@@ -26,6 +26,7 @@ public class SgfpService : ISgfpService
         var sgft = new Sgfp();
 
         decimal dinero = person.Salario;
+        bool entradaValida;
 
         while (true)
         {
@@ -34,46 +35,71 @@ public class SgfpService : ISgfpService
             Console.WriteLine("2. Retirar Dinero");
             Console.WriteLine("3. Salir");
             Console.Write("Seleccione una opción: ");
-
             string opcion = Console.ReadLine();
 
             switch (opcion)
             {
                 case "1":
-                    Console.WriteLine("Ingresa el monto a depositar: ");
-                    decimal monto = decimal.Parse(Console.ReadLine());
-                    Console.WriteLine("Ingrese la categoría de la transacción: ");
-                    string descripcion = Console.ReadLine();
-                    Console.WriteLine("Ingrese el concepto de la transacción: ");
-                    string concepto = Console.ReadLine();
+                    entradaValida = false;
+                    do
+                    {
+                        try
+                        {
+                            Console.WriteLine("Ingresa el monto a depositar: ");
+                            decimal monto = decimal.Parse(Console.ReadLine());
+                            Console.WriteLine("Ingrese la categoría de la transacción: ");
+                            string descripcion = Console.ReadLine();
+                            Console.WriteLine("Ingrese el concepto de la transacción: ");
+                            string concepto = Console.ReadLine();
 
-                    // Almacenar la transacción en los arreglos
-                    montos.Add(monto);
-                    descripciones.Add(descripcion);
-                    conceptos.Add(concepto);
-                    saldoActual += monto;
-                    ingresos += monto;
-                    contadorTransacciones++;
+                            // Almacenar la transacción en los arreglos
+                            montos.Add(monto);
+                            descripciones.Add(descripcion);
+                            conceptos.Add(concepto);
+                            saldoActual += monto;
+                            ingresos += monto;
+                            contadorTransacciones++;
+                            entradaValida = true;
+                            Console.WriteLine("\nTransacción realizada con éxito!");
+                        }
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Cantidad no válida");
+                        }
+                    } while (!entradaValida);
                     break;
                 case "2":
-                    Console.WriteLine("Ingresa el Monto a retirar: ");
-                    decimal montoRetiro = decimal.Parse(Console.ReadLine());
-                    if (montoRetiro > saldoActual)
+                    entradaValida = false;
+                    do
                     {
-                        Console.WriteLine("No hay saldo suficiente para el retiro.");
-                    }
-                    else
-                    {
-                        Console.WriteLine("Ingresa el concepto del retiro: ");
-                        string conceptoRetiro = Console.ReadLine();
-                        saldoActual -= montoRetiro;
-                        gastos += montoRetiro;
-                        montosRetiros.Add(montoRetiro);
-                        conceptosRetiros.Add(conceptoRetiro);
-                        Console.WriteLine(
-                            $"Se retiraron ${montoRetiro} exitosamente. Concepto: {conceptoRetiro}."
-                        );
-                    }
+                        try
+                        {
+                            Console.WriteLine("Ingresa el Monto a retirar: ");
+                            decimal montoRetiro = decimal.Parse(Console.ReadLine());
+                            if (montoRetiro > saldoActual)
+                            {
+                                Console.WriteLine("No hay saldo suficiente para el retiro.");
+                            }
+                            else
+                            {
+                                Console.WriteLine("Ingresa el concepto del retiro: ");
+                                string conceptoRetiro = Console.ReadLine();
+                                saldoActual -= montoRetiro;
+                                gastos += montoRetiro;
+                                montosRetiros.Add(montoRetiro);
+                                conceptosRetiros.Add(conceptoRetiro);
+                                entradaValida = true;
+                                Console.WriteLine(
+                                    $"Se retiró ${montoRetiro} exitosamente. Concepto: {conceptoRetiro}."
+                                );
+                            }
+                        }
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Cantidad no válida");
+                        }
+                    } while (!entradaValida);
+
                     break;
                 case "3":
                     Console.WriteLine("Saliendo del Menú SgfpService...");
@@ -138,7 +164,10 @@ public class SgfpService : ISgfpService
                     for (int i = 0; i < montosRetiros.Count; i++)
                     {
                         Console.WriteLine(
-                            "Retiro de $" + montosRetiros[i] + " con concepto de " + conceptosRetiros[i]
+                            "Retiro de $"
+                                + montosRetiros[i]
+                                + " con concepto de "
+                                + conceptosRetiros[i]
                         );
                     }
                     Console.WriteLine($"Total de gastos: ${gastos}");
@@ -159,6 +188,7 @@ public class SgfpService : ISgfpService
         var sgft = new Sgfp();
 
         decimal dinero = person.Salario;
+        bool entradaValida;
 
         while (true)
         {
@@ -172,32 +202,46 @@ public class SgfpService : ISgfpService
             switch (opcion)
             {
                 case "1":
+                    entradaValida = false;
                     Console.Write("Ingresa un concepto para la meta financiera: ");
                     string conceptoMeta = Console.ReadLine();
 
-                    Console.Write("Ingresa la cantidad de ahorro para la meta: ");
-                    decimal cantidadAhorroMeta = decimal.Parse(Console.ReadLine());
-
-                    //Console.Write(
-                    //  "Ingresa un lapso de tiempo en el cual quieres que tu meta se cumpla: "
-                    //);
-                    //decimal lapsoTiempo = decimal.Parse(Console.ReadLine());
-
-                    if (cantidadAhorroMeta > 0)
+                    do
                     {
-                        conceptosMetas.Add(conceptoMeta);
-                        MontosMetas.Add(cantidadAhorroMeta);
-                        contadorTransacciones++;
-                        //decimal ahorroDiario = cantidadAhorroMeta / lapsoTiempo;
-                        //ahorroDiarios.Add(ahorroDiario);
-                        Console.Write(
-                            "\nMeta añadida!   Para ver más detalles sobre tu nueva meta ve a tu historial de metas\n"
-                        );
-                    }
-                    else
-                    {
-                        Console.WriteLine("No puedes fijar una meta de $0. Pa eso mejor nadota.");
-                    }
+                        try
+                        {
+                            Console.Write("Ingresa la cantidad de ahorro para la meta: ");
+                            decimal cantidadAhorroMeta = decimal.Parse(Console.ReadLine());
+
+                            //Console.Write(
+                            //  "Ingresa un lapso de tiempo en el cual quieres que tu meta se cumpla: "
+                            //);
+                            //decimal lapsoTiempo = decimal.Parse(Console.ReadLine());
+
+                            if (cantidadAhorroMeta > 0)
+                            {
+                                conceptosMetas.Add(conceptoMeta);
+                                MontosMetas.Add(cantidadAhorroMeta);
+                                contadorTransacciones++;
+                                entradaValida = true;
+                                //decimal ahorroDiario = cantidadAhorroMeta / lapsoTiempo;
+                                //ahorroDiarios.Add(ahorroDiario);
+                                Console.Write(
+                                    "\nMeta añadida!   Para ver más detalles sobre tu nueva meta ve a tu historial de metas\n"
+                                );
+                            }
+                            else
+                            {
+                                Console.WriteLine(
+                                    "No puedes fijar una meta de $0. Pa eso mejor nadota."
+                                );
+                            }
+                        }
+                        catch (System.Exception)
+                        {
+                            Console.WriteLine("Cantidad no válida");
+                        }
+                    } while (!entradaValida);
 
                     break;
                 case "2":
