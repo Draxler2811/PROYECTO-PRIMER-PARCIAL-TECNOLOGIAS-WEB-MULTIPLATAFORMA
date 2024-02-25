@@ -9,3 +9,14 @@ C:\Users\ol196\OneDrive\Documentos\Universidad\Octavo Semestre\Tecnologias web M
 C:\Users\ol196\OneDrive\Documentos\Universidad\Octavo Semestre\Tecnologias web Multiplataforma\Parcial 1\PROYECTO 1ER PARCIAL\SGFP.Core\obj\Debug\net7.0\refint\SGFP.Core.dll
 C:\Users\ol196\OneDrive\Documentos\Universidad\Octavo Semestre\Tecnologias web Multiplataforma\Parcial 1\PROYECTO 1ER PARCIAL\SGFP.Core\obj\Debug\net7.0\SGFP.Core.pdb
 C:\Users\ol196\OneDrive\Documentos\Universidad\Octavo Semestre\Tecnologias web Multiplataforma\Parcial 1\PROYECTO 1ER PARCIAL\SGFP.Core\obj\Debug\net7.0\ref\SGFP.Core.dll
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\obj\Debug\net7.0\SGFP.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\obj\Debug\net7.0\SGFP.Core.AssemblyInfoInputs.cache
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\obj\Debug\net7.0\SGFP.Core.AssemblyInfo.cs
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\obj\Debug\net7.0\SGFP.Core.csproj.CoreCompileInputs.cache
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\obj\Debug\net7.0\SGFP.Core.dll
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\obj\Debug\net7.0\refint\SGFP.Core.dll
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\obj\Debug\net7.0\SGFP.Core.pdb
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\bin\Debug\net7.0\SGFP.Core.deps.json
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\bin\Debug\net7.0\SGFP.Core.dll
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\bin\Debug\net7.0\SGFP.Core.pdb
+C:\Users\Angel Rosales\Documents\Proyectos web multi plataforma\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\SGFP.Core\obj\Debug\net7.0\ref\SGFP.Core.dll

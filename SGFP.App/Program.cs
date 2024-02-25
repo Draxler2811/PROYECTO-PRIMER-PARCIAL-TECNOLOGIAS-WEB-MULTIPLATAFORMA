@@ -19,7 +19,7 @@ public static class Program{
                 Console.WriteLine("\nMenú:");
                 Console.WriteLine("1. Registro de Transaciones");
                 Console.WriteLine("2. Seguimiento de saldo y Estado Financiero");
-                Console.WriteLine("3. Meta");
+                Console.WriteLine("3. Metas y presupuestos");
                 Console.WriteLine("4. Salir");
                 Console.Write("Seleccione una opción: ");
 
