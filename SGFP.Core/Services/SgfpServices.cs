@@ -8,6 +8,9 @@ public class SgfpService : ISgfpService{
     private string[] descripciones = new string[100];
     private string[] conceptos = new string[100];
     private decimal saldoTotal = 0;
+    private decimal ingresos = 0;
+    private decimal gastos = 0;
+
     private int contadorTransacciones = 0;
 
     public Sgfp ProcessSgfp(Person person){
@@ -20,9 +23,8 @@ public class SgfpService : ISgfpService{
             {
                 Console.WriteLine("\nRegistro o transacion:");
                 Console.WriteLine("1. Ingresar Monto");
-                Console.WriteLine("2. Consultar Saldo");
-                Console.WriteLine("3. Retirar Dinero");
-                Console.WriteLine("4. Salir");
+                Console.WriteLine("2. Retirar Dinero");
+                Console.WriteLine("3. Salir");
                 Console.Write("Seleccione una opción: ");
 
                 string opcion = Console.ReadLine();
@@ -42,29 +44,24 @@ public class SgfpService : ISgfpService{
                         descripciones[contadorTransacciones] = descripcion;
                         conceptos[contadorTransacciones] = concepto;
                         saldoTotal += monto;
-
+                        ingresos += monto;
                         contadorTransacciones++;
-
                         break;
-                   case "2":
-              if (saldoTotal <= 0) {
-                 Console.WriteLine("No hay montos ingresados todavía.");
-                } else {
-             Console.WriteLine($"Saldo actual: ${saldoTotal}");
-                }
-              break;
-                   case "3":
-    Console.WriteLine("Ingresa el Monto a retirar: ");
-    decimal montoRetiro = decimal.Parse(Console.ReadLine());
+                case "2":
+                  Console.WriteLine("Ingresa el Monto a retirar: ");
+                  decimal montoRetiro = decimal.Parse(Console.ReadLine());
+                 Console.WriteLine("Ingresa el concepto del retiro: ");
+                 string conceptoRetiro = Console.ReadLine();
 
-    if (montoRetiro > saldoTotal) {
-        Console.WriteLine("No hay saldo suficiente para el retiro.");
-    } else {
-        saldoTotal -= montoRetiro;
-        Console.WriteLine($"Se retiraron ${montoRetiro} exitosamente");
-    }
-    break;
-                    case "4":
+               if (montoRetiro > saldoTotal) {
+               Console.WriteLine("No hay saldo suficiente para el retiro.");
+                  } else {
+                 saldoTotal -= montoRetiro;
+                 gastos += montoRetiro;
+                 Console.WriteLine($"Se retiraron ${montoRetiro} exitosamente. Concepto: {conceptoRetiro}.");
+                       }
+                    break;
+                    case "3":
                         Console.WriteLine("Saliendo del Menú SgfpService...");
                         return sgft;
                     default:
@@ -82,8 +79,8 @@ public class SgfpService : ISgfpService{
              while (true)
             {
                 Console.WriteLine("\nSeguimiento de saldo y estado Financiero:");
-                Console.WriteLine("1. Ingresar cantidad");
-                Console.WriteLine("2. Retirar dinero");
+                Console.WriteLine("1. Saldo Actual");
+                Console.WriteLine("2. Estado Financiero");
                 Console.WriteLine("3. Salir");
                 Console.Write("Seleccione una opción: ");
 
@@ -92,9 +89,15 @@ public class SgfpService : ISgfpService{
                 switch (opcion)
                 {
                     case "1":
-                        // Lógica para calcular el Impuesto sobre la Renta (ISR)
-                        Console.WriteLine("Ingresa la cantidad a depositar ");
-                        break;
+              if (saldoTotal < 0) {
+                 Console.WriteLine("No hay montos ingresados todavía.");
+                } else {
+             Console.WriteLine($"Saldo actual: ${saldoTotal}");
+            Console.WriteLine($"Ingresos: ${ingresos}");
+             Console.WriteLine($"Gastos: ${gastos}");
+
+                }
+              break;
                     case "2":
                         Console.WriteLine("Ingrese la cantidad a retirar");
                         break;
