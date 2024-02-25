@@ -12,7 +12,7 @@ public static class Program{
        
         SgfpService sgfpService = new SgfpService();
 
-      Console.WriteLine("Bienvenido al Sistema de Cálculo de Financiero1");
+      Console.WriteLine("Bienvenido al Sistema de Cálculo de Financiero");
 
             while (true)
             {
