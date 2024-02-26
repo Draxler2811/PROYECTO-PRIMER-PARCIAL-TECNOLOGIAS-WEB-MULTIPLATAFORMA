@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.App\\SGFP.App.csproj": {}
+    "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.App\\SGFP.App.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.App\\SGFP.App.csproj": {
+    "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.App\\SGFP.App.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.App\\SGFP.App.csproj",
+        "projectUniqueName": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.App\\SGFP.App.csproj",
         "projectName": "SGFP.App",
-        "projectPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.App\\SGFP.App.csproj",
-        "packagesPath": "C:\\Users\\Angel Rosales\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.App\\obj\\",
+        "projectPath": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.App\\SGFP.App.csproj",
+        "packagesPath": "C:\\Users\\ol196\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.App\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Angel Rosales\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ol196\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -26,8 +26,8 @@
           "net7.0": {
             "targetAlias": "net7.0",
             "projectReferences": {
-              "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Core\\SGFP.Core.csproj": {
-                "projectPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Core\\SGFP.Core.csproj"
+              "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Core\\SGFP.Core.csproj": {
+                "projectPath": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Core\\SGFP.Core.csproj"
               }
             }
           }
@@ -57,21 +57,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Core\\SGFP.Core.csproj": {
+    "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Core\\SGFP.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Core\\SGFP.Core.csproj",
+        "projectUniqueName": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Core\\SGFP.Core.csproj",
         "projectName": "SGFP.Core",
-        "projectPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Core\\SGFP.Core.csproj",
-        "packagesPath": "C:\\Users\\Angel Rosales\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Core\\obj\\",
+        "projectPath": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Core\\SGFP.Core.csproj",
+        "packagesPath": "C:\\Users\\ol196\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Core\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Angel Rosales\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\ol196\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net7.0"
@@ -110,7 +110,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.406\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
         }
       }
     }

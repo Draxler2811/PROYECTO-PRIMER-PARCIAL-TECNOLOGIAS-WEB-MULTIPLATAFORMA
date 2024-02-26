@@ -47,14 +47,19 @@ public class SgfpService : ISgfpService
                         {
                             Console.WriteLine("Ingresa el monto a depositar: ");
                             decimal monto = decimal.Parse(Console.ReadLine());
-                            Console.WriteLine("Ingrese la categoría de la transacción: ");
-                            string descripcion = Console.ReadLine();
+                            Console.WriteLine("Ingrese la categoría de la transacción (alimentacion,transporte, vivienda, entretenimiento): ");
+                            string categoria = Console.ReadLine();
+
+                             if (categoria != "alimentacion" && categoria != "transporte" && categoria != "vivienda" && categoria != "entretenimiento")
+                             {
+                              Console.WriteLine("Categoría inválida. Por favor, elige una de las opciones proporcionadas.");
+                             continue;
+                             }
                             Console.WriteLine("Ingrese el concepto de la transacción: ");
                             string concepto = Console.ReadLine();
 
-                            // Almacenar la transacción en los arreglos
                             montos.Add(monto);
-                            descripciones.Add(descripcion);
+                            descripciones.Add(categoria);
                             conceptos.Add(concepto);
                             saldoActual += monto;
                             ingresos += monto;
