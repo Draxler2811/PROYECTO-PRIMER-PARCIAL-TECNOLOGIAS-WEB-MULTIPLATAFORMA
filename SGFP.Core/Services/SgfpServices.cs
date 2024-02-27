@@ -19,8 +19,6 @@ public class SgfpService : ISgfpService
     private decimal ingresos = 0;
     private decimal gastos = 0;
 
-    private int contadorTransacciones = 0;
-
     public Sgfp RegistroSgfp(Person person)
     {
         var sgft = new Sgfp();
