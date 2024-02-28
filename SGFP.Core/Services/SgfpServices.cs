@@ -269,7 +269,7 @@ public class SgfpService : ISgfpService
                                     + MontosMetas[i]
                                     + " y cuentas con un presupuesto de "
                                     + presupuestoMetas[i]
-                                    + " ( meta completada con anterioridad )"
+                                    + " ( meta completada )"
                             );
                         }
                         else if ((presupuestoMetas[i] + saldoActual) >= MontosMetas[i])
