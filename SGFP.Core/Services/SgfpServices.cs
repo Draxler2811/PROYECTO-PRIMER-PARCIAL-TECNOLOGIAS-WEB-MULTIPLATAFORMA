@@ -13,13 +13,13 @@ public class SgfpService : ISgfpService
   
     List<string> conceptosMetas = new List<string>();
     List<decimal> MontosMetas = new List<decimal>();
+    List<decimal> presupuestoMetas = new List<decimal>();
+    List<decimal> metasCompletadas = new List<decimal>();
     List<decimal> ahorroDiarios = new List<decimal>();
 
     private decimal saldoActual = 0;
     private decimal ingresos = 0;
     private decimal gastos = 0;
-
-    private int contadorTransacciones = 0;
 
     public Sgfp RegistroSgfp(Person person)
     {
@@ -47,14 +47,23 @@ public class SgfpService : ISgfpService
                         {
                             Console.WriteLine("Ingresa el monto a depositar: ");
                             decimal monto = decimal.Parse(Console.ReadLine());
-                            Console.WriteLine("Ingrese la categoría de la transacción (alimentacion,transporte, vivienda, entretenimiento): ");
+                            Console.WriteLine(
+                                "Ingrese la categoría de la transacción (alimentacion,transporte, vivienda, entretenimiento): "
+                            );
                             string categoria = Console.ReadLine();
 
-                             if (categoria != "alimentacion" && categoria != "transporte" && categoria != "vivienda" && categoria != "entretenimiento")
-                             {
-                              Console.WriteLine("Categoría inválida. Por favor, elige una de las opciones proporcionadas.");
-                             continue;
-                             }
+                            if (
+                                categoria != "alimentacion"
+                                && categoria != "transporte"
+                                && categoria != "vivienda"
+                                && categoria != "entretenimiento"
+                            )
+                            {
+                                Console.WriteLine(
+                                    "Categoría inválida. Por favor, elige una de las opciones proporcionadas."
+                                );
+                                continue;
+                            }
                             Console.WriteLine("Ingrese el concepto de la transacción: ");
                             string concepto = Console.ReadLine();
 
@@ -63,7 +72,7 @@ public class SgfpService : ISgfpService
                             conceptos.Add(concepto);
                             saldoActual += monto;
                             ingresos += monto;
-                            contadorTransacciones++;
+
                             entradaValida = true;
                             Console.WriteLine("\nTransacción realizada con éxito!");
                         }
@@ -215,22 +224,19 @@ public class SgfpService : ISgfpService
                     {
                         try
                         {
-                            Console.Write("Ingresa la cantidad de ahorro para la meta: ");
+                            Console.Write("Ingresa la cantidad total de ahorro para la meta: ");
                             decimal cantidadAhorroMeta = decimal.Parse(Console.ReadLine());
-
-                            //Console.Write(
-                            //  "Ingresa un lapso de tiempo en el cual quieres que tu meta se cumpla: "
-                            //);
-                            //decimal lapsoTiempo = decimal.Parse(Console.ReadLine());
 
                             if (cantidadAhorroMeta > 0)
                             {
+                                Console.Write("Ingresa el presupuesto disponible para la meta: ");
+                                decimal presupuestoMeta = decimal.Parse(Console.ReadLine());
                                 conceptosMetas.Add(conceptoMeta);
                                 MontosMetas.Add(cantidadAhorroMeta);
-                                contadorTransacciones++;
+                                metasCompletadas.Add(presupuestoMeta);
+                                presupuestoMetas.Add(presupuestoMeta);
                                 entradaValida = true;
-                                //decimal ahorroDiario = cantidadAhorroMeta / lapsoTiempo;
-                                //ahorroDiarios.Add(ahorroDiario);
+
                                 Console.Write(
                                     "\nMeta añadida!   Para ver más detalles sobre tu nueva meta ve a tu historial de metas\n"
                                 );
@@ -250,31 +256,60 @@ public class SgfpService : ISgfpService
 
                     break;
                 case "2":
+
                     for (int i = 0; i < MontosMetas.Count; i++)
                     {
-                        if (saldoActual >= MontosMetas[i])
+                        if (
+                            metasCompletadas[i] >= MontosMetas[i]
+                            && (presupuestoMetas[i] + saldoActual) < MontosMetas[i]
+                        )
                         {
                             Console.WriteLine("\n=========== {0} ============", conceptosMetas[i]);
                             Console.WriteLine(
-                                "Tu meta de ahorro para " + conceptosMetas[i] + " es de ${0}",
-                                MontosMetas[i] + " ( meta completada )"
+                                "Tu meta de ahorro para "
+                                    + conceptosMetas[i]
+                                    + " tiene un costo total de $"
+                                    + MontosMetas[i]
+                                    + " y cuentas con un presupuesto de $"
+                                    + presupuestoMetas[i]
+                                    + ", con un saldo en tu cuenta de $"
+                                    + saldoActual
+                                    + " ( meta completada )"
+                            );
+                        }
+                        else if ((presupuestoMetas[i] + saldoActual) >= MontosMetas[i])
+                        {
+                            metasCompletadas[i] += saldoActual;
+                            Console.WriteLine("\n=========== {0} ============", conceptosMetas[i]);
+                            Console.WriteLine(
+                                "Tu meta de ahorro para "
+                                    + conceptosMetas[i]
+                                    + " tiene un costo total de $"
+                                    + MontosMetas[i]
+                                    + " y cuentas con un presupuesto de $"
+                                    + presupuestoMetas[i]
+                                    + ", con un saldo en tu cuenta de $"
+                                    + saldoActual
+                                    + " ( meta completada )"
                             );
                         }
                         else
                         {
                             Console.WriteLine("\n=========== {0} ============", conceptosMetas[i]);
                             Console.WriteLine(
-                                "Tu meta de ahorro para " + conceptosMetas[i] + " es de ${0}",
-                                MontosMetas[i]
+                                "Tu meta de ahorro para "
+                                    + conceptosMetas[i]
+                                    + " tiene un costo total de $"
+                                    + MontosMetas[i]
+                                    + " y cuentas con un presupuesto de $"
+                                    + presupuestoMetas[i]
+                                    + ", con un saldo en tu cuenta de $"
+                                    + saldoActual
                                     + " ( aún te faltan $"
-                                    + (MontosMetas[i] - saldoActual)
+                                    + (MontosMetas[i] - presupuestoMetas[i] - saldoActual)
                                     + " )"
                             );
                         }
-                        //Console.WriteLine(
-                        //"Para lograrla, debes ahorrar ${0} pesos al día.",
-                        //ahorroDiarios[i].ToString("0.00")
-                        //);
                     }
                     break;
                 case "3":
