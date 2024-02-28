@@ -259,16 +259,21 @@ public class SgfpService : ISgfpService
 
                     for (int i = 0; i < MontosMetas.Count; i++)
                     {
-                        if (metasCompletadas[i] >= MontosMetas[i] && (presupuestoMetas[i] + saldoActual) < MontosMetas[i] )
+                        if (
+                            metasCompletadas[i] >= MontosMetas[i]
+                            && (presupuestoMetas[i] + saldoActual) < MontosMetas[i]
+                        )
                         {
                             Console.WriteLine("\n=========== {0} ============", conceptosMetas[i]);
                             Console.WriteLine(
                                 "Tu meta de ahorro para "
                                     + conceptosMetas[i]
-                                    + " tiene un costo total de "
+                                    + " tiene un costo total de $"
                                     + MontosMetas[i]
-                                    + " y cuentas con un presupuesto de "
+                                    + " y cuentas con un presupuesto de $"
                                     + presupuestoMetas[i]
+                                    + ", con un saldo en tu cuenta de $"
+                                    + saldoActual
                                     + " ( meta completada )"
                             );
                         }
@@ -279,10 +284,12 @@ public class SgfpService : ISgfpService
                             Console.WriteLine(
                                 "Tu meta de ahorro para "
                                     + conceptosMetas[i]
-                                    + " tiene un costo total de "
+                                    + " tiene un costo total de $"
                                     + MontosMetas[i]
-                                    + " y cuentas con un presupuesto de "
+                                    + " y cuentas con un presupuesto de $"
                                     + presupuestoMetas[i]
+                                    + ", con un saldo en tu cuenta de $"
+                                    + saldoActual
                                     + " ( meta completada )"
                             );
                         }
@@ -292,10 +299,12 @@ public class SgfpService : ISgfpService
                             Console.WriteLine(
                                 "Tu meta de ahorro para "
                                     + conceptosMetas[i]
-                                    + " tiene un costo total de "
+                                    + " tiene un costo total de $"
                                     + MontosMetas[i]
-                                    + " y cuentas con un presupuesto de "
+                                    + " y cuentas con un presupuesto de $"
                                     + presupuestoMetas[i]
+                                    + ", con un saldo en tu cuenta de $"
+                                    + saldoActual
                                     + " ( aún te faltan $"
                                     + (MontosMetas[i] - presupuestoMetas[i] - saldoActual)
                                     + " )"
