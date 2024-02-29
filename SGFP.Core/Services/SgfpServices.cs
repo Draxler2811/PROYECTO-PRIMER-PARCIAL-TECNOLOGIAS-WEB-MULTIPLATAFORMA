@@ -12,14 +12,14 @@ public class SgfpService : ISgfpService
     List<string> descripciones = new List<string>();
 
     List<string> conceptosMetas = new List<string>();
-    List<decimal> MontosMetas = new List<decimal>();
+    public List<decimal> MontosMetas = new List<decimal>();
     List<decimal> presupuestoMetas = new List<decimal>();
     List<decimal> metasCompletadas = new List<decimal>();
     List<decimal> ahorroDiarios = new List<decimal>();
 
-    private decimal saldoActual = 0;
-    private decimal ingresos = 0;
-    private decimal gastos = 0;
+    public decimal saldoActual = 0;
+    public decimal ingresos = 0;
+    public decimal gastos = 0;
 
     public Sgfp RegistroSgfp(Person person)
     {

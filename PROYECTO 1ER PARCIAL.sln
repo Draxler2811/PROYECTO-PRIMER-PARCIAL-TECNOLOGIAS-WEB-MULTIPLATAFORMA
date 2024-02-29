@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGFP.App", "SGFP.App\SGFP.A
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGFP.Core", "SGFP.Core\SGFP.Core.csproj", "{84C64FB5-5F13-493B-B8CD-3EAF5CD1C398}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGFP.Tests", "SGFP.Tests\SGFP.Tests.csproj", "{0AE34202-C5A2-4D95-B7F5-7CA1D9807008}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{84C64FB5-5F13-493B-B8CD-3EAF5CD1C398}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{84C64FB5-5F13-493B-B8CD-3EAF5CD1C398}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{84C64FB5-5F13-493B-B8CD-3EAF5CD1C398}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AE34202-C5A2-4D95-B7F5-7CA1D9807008}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AE34202-C5A2-4D95-B7F5-7CA1D9807008}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AE34202-C5A2-4D95-B7F5-7CA1D9807008}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AE34202-C5A2-4D95-B7F5-7CA1D9807008}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

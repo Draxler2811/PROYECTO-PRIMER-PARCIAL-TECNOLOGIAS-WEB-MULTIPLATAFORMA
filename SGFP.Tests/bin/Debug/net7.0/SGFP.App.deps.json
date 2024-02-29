@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "SGFP.App/1.0.0": {
+        "dependencies": {
+          "SGFP.Core": "1.0.0"
+        },
+        "runtime": {
+          "SGFP.App.dll": {}
+        }
+      },
+      "SGFP.Core/1.0.0": {
+        "runtime": {
+          "SGFP.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SGFP.App/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SGFP.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

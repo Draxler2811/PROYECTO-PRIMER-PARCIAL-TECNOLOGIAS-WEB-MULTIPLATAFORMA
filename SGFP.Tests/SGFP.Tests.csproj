@@ -22,4 +22,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\SGFP.App\SGFP.App.csproj" />
+    <ProjectReference Include="..\SGFP.Core\SGFP.Core.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1708,6 +1708,29 @@
         "build": {
           "build/netcoreapp3.1/xunit.runner.visualstudio.props": {}
         }
+      },
+      "SGFP.App/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "dependencies": {
+          "SGFP.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/SGFP.App.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SGFP.App.dll": {}
+        }
+      },
+      "SGFP.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v7.0",
+        "compile": {
+          "bin/placeholder/SGFP.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SGFP.Core.dll": {}
+        }
       }
     }
   },
@@ -5500,30 +5523,42 @@
         "xunit.runner.visualstudio.2.4.5.nupkg.sha512",
         "xunit.runner.visualstudio.nuspec"
       ]
+    },
+    "SGFP.App/1.0.0": {
+      "type": "project",
+      "path": "../SGFP.App/SGFP.App.csproj",
+      "msbuildProject": "../SGFP.App/SGFP.App.csproj"
+    },
+    "SGFP.Core/1.0.0": {
+      "type": "project",
+      "path": "../SGFP.Core/SGFP.Core.csproj",
+      "msbuildProject": "../SGFP.Core/SGFP.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net7.0": [
       "Microsoft.NET.Test.Sdk >= 17.7.1",
+      "SGFP.App >= 1.0.0",
+      "SGFP.Core >= 1.0.0",
       "coverlet.collector >= 3.2.0",
       "xunit >= 2.4.2",
       "xunit.runner.visualstudio >= 2.4.5"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ol196\\.nuget\\packages\\": {}
+    "C:\\Users\\Angel Rosales\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Test\\SGFP.Test.csproj",
-      "projectName": "SGFP.Test",
-      "projectPath": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Test\\SGFP.Test.csproj",
-      "packagesPath": "C:\\Users\\ol196\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ol196\\OneDrive\\Documentos\\Universidad\\Octavo Semestre\\Tecnologias web Multiplataforma\\Parcial 1\\PROYECTO 1ER PARCIAL\\SGFP.Test\\obj\\",
+      "projectUniqueName": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Tests\\SGFP.Tests.csproj",
+      "projectName": "SGFP.Tests",
+      "projectPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Tests\\SGFP.Tests.csproj",
+      "packagesPath": "C:\\Users\\Angel Rosales\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ol196\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Angel Rosales\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
@@ -5534,7 +5569,14 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.App\\SGFP.App.csproj": {
+              "projectPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.App\\SGFP.App.csproj"
+            },
+            "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Core\\SGFP.Core.csproj": {
+              "projectPath": "C:\\Users\\Angel Rosales\\Documents\\Proyectos web multi plataforma\\PROYECTO-PRIMER-PARCIAL-TECNOLOGIAS-WEB-MULTIPLATAFORMA\\SGFP.Core\\SGFP.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
@@ -5584,7 +5626,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.405\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.406\\RuntimeIdentifierGraph.json"
       }
     }
   }
