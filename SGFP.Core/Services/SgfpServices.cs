@@ -10,7 +10,7 @@ public class SgfpService : ISgfpService
     List<decimal> montosRetiros = new List<decimal>();
     List<string> conceptosRetiros = new List<string>();
     List<string> descripciones = new List<string>();
-
+  
     List<string> conceptosMetas = new List<string>();
     public List<decimal> MontosMetas = new List<decimal>();
     List<decimal> presupuestoMetas = new List<decimal>();
